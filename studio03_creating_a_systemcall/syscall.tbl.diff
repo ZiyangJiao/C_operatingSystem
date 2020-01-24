@@ -1,0 +1,9 @@
+--- syscall.tbl	2019-09-06 16:58:09.914274170 -0500
++++ syscall.tbl.09062019	2019-09-06 16:49:42.250985956 -0500
+@@ -412,6 +412,3 @@
+ 395	common	pkey_alloc		sys_pkey_alloc
+ 396	common	pkey_free		sys_pkey_free
+ 397	common	statx			sys_statx
+-#add two syscalls on 0906
+-398	common  newfuncpro1             sys_newfuncpro1
+-399	common  newfuncpro2             sys_newfuncpro2
