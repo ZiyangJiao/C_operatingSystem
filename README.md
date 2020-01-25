@@ -108,5 +108,22 @@
 
 **Studio 17: I/O Event Handling**
 
-1. se *select*, *poll*, and *epoll* to multiplex I/O events from multiple file descriptors, including sockets
+1. Use *select*, *poll*, and *epoll* to multiplex I/O events from multiple file descriptors, including sockets
 2. Explore two event notification models offered by *epoll*
+
+**Project 1: Kernel Monitoring Framework**
+1. Use kernel timers to schedule recurring events (e.g., thread wakeups) in the future.
+2. Use kernel threads to perform deferrable work inside the kernel.
+3. Create a simple monitoring framework that periodically captures basic information from kernelspace, using kernel timers and kernel threads to manage the frequency and context of such information gathering.
+4. Verify and evaluate the operation of your monitoring framework through tracing techniques.
+
+**Project 2:Kernel Module Concurrent Memory Use**
+1. Implement a kernel module that uses concurrent (and to the extent possible, parallel) processing to compute all the prime numbers up to a specified upper bound.
+2. Again use basic multi-threaded synchronization and concurrency techniques, but in a more sophisticated configuration in which the threads will cooperate to complete a common task (computing prime numbers).
+3. Manage kernel memory dynamically within the kernel module.
+
+**Project 3: Memory Management and Paging**
+1. implement a kernel module that leverages the `mmap()` system call to perform virtual memory mappings for a process. Processes will interact with your module via a special device file, in this case `/dev/paging`. When a process issues the `mmap()` call to this file, your module code will be invoked.
+2. This module will perform two main tasks when it is invoked in this fashion: (1) allocate physical memory for the process, and (2) map a new virtual address from this process to the new physical memory that you allocated for that task.
+3. This module will be configured to operate in one of two modes: (1) demand paging, or (2) pre-paging. Details of how these modes should be implemented are discussed in detail in document.
+4. Study the performance differences between those two different modes, focusing on how they affect the system call execution time for the `mmap` call, and the runtime of a matrix multiplication application that uses the memory you map for it.
